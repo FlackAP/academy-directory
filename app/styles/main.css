@@ -1,0 +1,30 @@
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.header {
+    width:100%
+}
+
+.container {
+    width:100%;
+}
+
+table {
+    margin: 0 auto;
+    width:900px;
+    text-align: left;
+    border:1px solid black;
+}
+
+.table-unit {
+    width:900px;
+}
+
+td {
+    min-width: 51px;
+    max-width: 80px;
+
+}
