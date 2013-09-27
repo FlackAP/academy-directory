@@ -26,5 +26,17 @@ table {
 td {
     min-width: 51px;
     max-width: 80px;
+    text-align:left;
+}
 
+.first {
+    width:200px;
+}
+
+.last {
+    width:200px;
+}
+
+.email {
+    width:200px;
 }

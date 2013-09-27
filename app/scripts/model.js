@@ -27,7 +27,7 @@ Class = Backbone.Collection.extend({
 
 var data = [
 	{
-		id: "andy",
+		id: "Flack",
 		first: 'Andy',
     	last: 'Flack',
     	email: 'flack.ap@gmail.com',
@@ -36,6 +36,7 @@ var data = [
     },
 
 	{
+        id: "Tamburro",
     	first: 'Joe',
     	last: 'Tamburro',
     	email: 'joetamburro38@gmail.com',
@@ -66,15 +67,15 @@ var data = [
     {
     	first: 'Ryan',
     	last: 'Poplin',
-    	email: '',
-    	github: '',
+    	email: 'n/a',
+    	github: 'n/a',
     	photo: ''
     },
     {
         first: 'Caleb',
         last: 'Bradley',
-        email: '',
-        github: '',
+        email: 'calebbradley30@yahoo.com',
+        github: 'https://github.com/calebbradley',
         photo: ''
     },
     {
