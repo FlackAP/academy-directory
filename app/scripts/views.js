@@ -24,8 +24,8 @@ StudentView = Backbone.View.extend({
 	className:'student-unit',
 
 	events: {
-		"click #edit-button" : "edit",
-		"click #save" 		 : "save"
+		"click #edit" : "update",
+		"click #save" : "save"
 	},
 
 	initialize: function(){
@@ -34,11 +34,14 @@ StudentView = Backbone.View.extend({
 	},
 
 	render: function(){
+		$('.student-unit').html('')
 		this.$el.append( this.template({item: this.model }) )
 	},
 
-	edit: function() {
-		editTemplate = _.template($("#edit-template").text());
+	update: function() {
+		var editTemplate = _.template($("#edit-template").text());
+		console.log('editing')
+		$('.student-unit').html('')
 		this.$el.append(editTemplate({item: this.model}) );
 	},
 
@@ -50,7 +53,7 @@ StudentView = Backbone.View.extend({
 
 		this.model.set('name', firstEdit);
 		this.model.set('last', lastEdit);
-		this.model.set('email', emailEdit)
+		this.model.set('email', emailEdit);
 		this.model.set('github', githubEdit);
 
 		this.render();

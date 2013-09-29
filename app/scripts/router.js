@@ -1,12 +1,10 @@
 DirectoryRouter = Backbone.Router.extend({
 
 	initialize: function() {
-
 	},
 
 	routes: {
 		"table": "showTable",
-		"thumbnail": "showThumbnail",
 		"students/:last": "showStudent"
 	},
 
@@ -20,7 +18,7 @@ DirectoryRouter = Backbone.Router.extend({
 	showStudent: function(id) {
 		console.log('student id: ', id)
 		$('.container').html('')
-		shownStudent = this.students.get(id)
+		var shownStudent = this.students.get(id)
 		new StudentView({model: shownStudent})
 	} 	
 

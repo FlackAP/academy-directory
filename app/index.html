@@ -22,7 +22,6 @@
             <h1>The Iron Yard Academy Student Directory</h1>
             <h2>Fall 2013</h2>
             <a href="#/table">Table View</a>
-            <a href="#/thumbnail">Thumbnail View</a>
         </div>
 
 
@@ -40,9 +39,9 @@
                 <script type="text/template" id="student-template">
                     <div class="info-box">
                         <img src=" <%= item.get('photo')%> ">
-                        <button id="edit-button">EDIT</button>
+                        <button id="edit">EDIT</button>
                         <br>
-                        <span><%= item.get('first') +" " + item.get('last') %> </span><br>
+                        <h2><%= item.get('first') +" " + item.get('last') %> </span></h2>
                         <span><a href="mailto: <%= item.get('email')%>"> <%= item.get('email')%> </a> </span><br>
                         <span><a href="<%= item.get('github')%>"> <%= item.get('github')%> </a></span>
                     <div>
@@ -50,15 +49,13 @@
 
 
                 <script type="text/template" id="edit-template"> 
-                    <h1> Edit Student Information </h1> 
-                    <ul>
-                        <li>First Name: <input id="name-input" placeholder="first name" value="<%=student.get('first')%>">
-                        </li>
-                        <li>Last Name: <input id="name-input" placeholder="last name" value="<%=student.get('last')%>"></li>
-                        <li>Email: <input id="email-input" placeholder="email" value="<%=student.get('email')%>"></li>
-                        <li>Github: <input id="github-input" placeholder="github" value="<%=student.get('github')%>"></li>
-                        <li><button id="save-button">Save</button></li>
-                    </ul> 
+                    <h2> Update Student Information </h2> 
+                        <div>First Name: <input id="first-input" placeholder="first name" value="<%=item.get('first')%>">
+                        </div>
+                        <div>Last Name: <input id="last-input" value="<%=item.get('last')%>"></div>
+                        <div>Email: <input id="email-input" value="<%=item.get('email')%>"></div>
+                        <div>Github: <input id="github-input" value="<%=item.get('github')%>"></div>
+                        <button id="save">Save</button>
                 </script>
         </div>    
 
