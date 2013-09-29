@@ -11,16 +11,16 @@ DirectoryRouter = Backbone.Router.extend({
 	},
 
 	showTable: function(){
-		console.log("gonna show alllll the items")
+		console.log("showing all students")
 		$('.container').html('')
 		this.students = new Class ()
 		this.students.add( data )
 	},
 
 	showStudent: function(id) {
-		console.log(id)
+		console.log('student id: ', id)
 		$('.container').html('')
-		var shownStudent = this.students.get(id)
+		shownStudent = this.students.get(id)
 		new StudentView({model: shownStudent})
 	} 	
 
