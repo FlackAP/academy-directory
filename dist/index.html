@@ -1,0 +1,76 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>directory</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="styles/ec609276.main.css">
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="header">
+            <h1>The Iron Yard Academy Student Directory</h1>
+            <h2>Fall 2013</h2>
+            <a href="#/table">Table View</a>
+        </div>
+
+
+        <div class="container">         
+                <script type="text/template" id="table-template">
+                <table>
+                    <tr class="row">
+                    <a href="#/students/" + this.model.get('last')><td class="thumb"><img class='thumbnail' src="<%= item.get('photo')%>"></td></a>
+                    <td class="first"> <%= item.get('first') +" " + item.get('last') %> </td>
+                    <td class="email"> <%= item.get('email')%> </td>
+                    </tr>
+                </table>
+                </script>
+
+                <script type="text/template" id="student-template">
+                    <div class="info-box">
+                        <img src=" <%= item.get('photo')%> ">
+                        <button id="edit">EDIT</button>
+                        <br>
+                        <h2><%= item.get('first') +" " + item.get('last') %> </span></h2>
+                        <span><a href="mailto: <%= item.get('email')%>"> <%= item.get('email')%> </a> </span><br>
+                        <span><a href="<%= item.get('github')%>"> <%= item.get('github')%> </a></span>
+                    <div>
+                </script>
+
+
+                <script type="text/template" id="edit-template"> 
+                    <h2> Update Student Information </h2> 
+                        <div>First Name: <input id="first-input" placeholder="first name" value="<%=item.get('first')%>">
+                        </div>
+                        <div>Last Name: <input id="last-input" value="<%=item.get('last')%>"></div>
+                        <div>Email: <input id="email-input" value="<%=item.get('email')%>"></div>
+                        <div>Github: <input id="github-input" value="<%=item.get('github')%>"></div>
+                        <button id="save">Save</button>
+                </script>
+        </div>    
+
+        <script src="scripts/950f5e92.vendor.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <script src="scripts/3cfeec9d.main.js"></script>
+
+        <script src="scripts/3431b5a9.coffee.js"></script>
+</body>
+</html>
