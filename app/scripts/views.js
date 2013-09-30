@@ -24,7 +24,7 @@ StudentView = Backbone.View.extend({
 	className:'student-unit',
 
 	events: {
-		"click #edit" : "update",
+		"click #edit" : "edit",
 		"click #save" : "save"
 	},
 
@@ -38,7 +38,7 @@ StudentView = Backbone.View.extend({
 		this.$el.append( this.template({item: this.model }) )
 	},
 
-	update: function() {
+	edit: function() {
 		var editTemplate = _.template($("#edit-template").text());
 		console.log('editing')
 		$('.student-unit').html('')
