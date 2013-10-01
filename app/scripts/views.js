@@ -23,11 +23,6 @@ StudentView = Backbone.View.extend({
 
 	className:'student-unit',
 
-	events: {
-		"click #edit" : "edit",
-		"click #save" : "save"
-	},
-
 	initialize: function(){
 		$('.container').append(this.el),
 		this.render()
@@ -36,28 +31,22 @@ StudentView = Backbone.View.extend({
 	render: function(){
 		$('.student-unit').html('')
 		this.$el.append( this.template({item: this.model }) )
+	}
+})
+
+EditView = Backbone.View.extend({
+	template: _.template( $('#edit-template').text() ),
+
+	className:'edit-unit',
+
+	initialize: function(){
+		$('.container').append(this.el),
+		this.render()
 	},
 
-	edit: function() {
-		var editTemplate = _.template($("#edit-template").text());
-		console.log('editing')
-		$('.student-unit').html('')
-		this.$el.append(editTemplate({item: this.model}) );
-	},
-
-	save: function() {
-		var firstEdit = this.$el.find('input#first-input').val();
-		var lastEdit = this.$el.find('input#last-input').val();
-		var emailEdit = this.$el.find('input#email-input').val();
-		var githubEdit = this.$el.find('input#github-input').val();
-
-		this.model.set('name', firstEdit);
-		this.model.set('last', lastEdit);
-		this.model.set('email', emailEdit);
-		this.model.set('github', githubEdit);
-
-		this.render();
+	render: function(){
+		$('.edit-unit').html('')
+		this.$el.append( this.template({item: this.model }) )
 	}
 
 })
-

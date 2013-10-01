@@ -39,7 +39,7 @@
                 <script type="text/template" id="student-template">
                     <div class="info-box">
                         <img src=" <%= item.get('photo')%> ">
-                        <button id="edit">EDIT</button>
+                        <a href="#/students/<%= item.get('last') %>/edit/"><button id="edit">EDIT</button></a>
                         <br>
                         <h2><%= item.get('first') +" " + item.get('last') %> </span></h2>
                         <span><a href="mailto: <%= item.get('email')%>"> <%= item.get('email')%> </a> </span><br>
