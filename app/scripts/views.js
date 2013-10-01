@@ -46,7 +46,7 @@ EditView = Backbone.View.extend({
 
 	render: function(){
 		$('.edit-unit').html('')
-		this.$el.append( this.template({item: this.model }) )
+		this.$el.append( template({item: this.model }) )
 	}
 
 })

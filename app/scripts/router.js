@@ -1,19 +1,26 @@
 DirectoryRouter = Backbone.Router.extend({
 
 	initialize: function() {
+		$('.container').html('')
+		this.students = new Class ()
 	},
 
 	routes: {
 		"table"				 : "showTable",
-		"students/:last"	 : "showStudent",
-		"students/:last/edit": "showEdit"
+		"students/:id"	 : "showStudent",
+		"students/:id/edit": "showEdit"
 	},
 
 	showTable: function(){
 		console.log("showing all students")
 		$('.container').html('')
-		this.students = new Class ()
-		this.students.add( data )
+		this.students.fetch({
+			success: function(students){
+				students.each(function(student){
+					new TableView({model: student})
+				})
+			}
+		})
 	},
 
 	showStudent: function(id) {
@@ -24,10 +31,10 @@ DirectoryRouter = Backbone.Router.extend({
 	},
 
 	showEdit: function() {
-		console.log('editing student')
+		console.log('editing student id:', id)
 		$('.container').html('')
 		this.on('add', function(item){
-			new EditView( {model: Student})
+			new EditView( {})
 		})	
 	}	
 })
