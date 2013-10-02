@@ -50,7 +50,7 @@
                         <h2><%= item.get('first') +" " + item.get('last') %> </span></h2>
                         <span><a href="mailto: <%= item.get('email')%>"> <%= item.get('email')%> </a> </span><br>
                         <span><a href="<%= item.get('github')%>"> <%= item.get('github')%> </a></span><br>
-                        <a href="#/students/<%= item.get('id')%>/edit/"><button id="edit">EDIT</button></a>
+                        <a href="#/students/<%= item.get('_id')%>/edit"><button id="edit">EDIT</button></a>
                     <div>
 
                 </script>
