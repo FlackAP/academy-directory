@@ -24,7 +24,7 @@ StudentView = Backbone.View.extend({
 	className:'student-unit',
 
 	initialize: function(){
-		$('.container').append(this.el),
+		$('.container').append(this.$el),
 		this.render()
 	},
 
@@ -32,7 +32,7 @@ StudentView = Backbone.View.extend({
 		$('.student-unit').html('')
 		this.$el.append( this.template({item: this.model }) )
 	}
-})
+}),
 
 EditView = Backbone.View.extend({
 	template: _.template( $('#edit-template').text() ),
@@ -40,13 +40,15 @@ EditView = Backbone.View.extend({
 	className:'edit-unit',
 
 	initialize: function(){
-		$('.container').append(this.el),
+		console.log('editing coooool'),
+		$('.container').append(this.$el),
 		this.render()
 	},
 
 	render: function(){
-		$('.edit-unit').html('')
-		this.$el.append( template({item: this.model }) )
+		console.log('ok'),
+		$('.student-unit').html(''),
+		this.$el.append( this.template({item: this.model}) )
 	}
 
 })

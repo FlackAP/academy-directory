@@ -27,35 +27,43 @@
 
         <div class="container">         
                 <script type="text/template" id="table-template">
-                <table>
-                    <tr class="row">
-                    <a href="#/students/" + this.model.get('last')><td class="thumb"><img class='thumbnail' src="<%= item.get('photo')%>"></td></a>
-                    <td class="first"> <%= item.get('first') +" " + item.get('last') %> </td>
-                    <td class="email"> <%= item.get('email')%> </td>
-                    </tr>
-                </table>
+                    <table>
+                        <tr class="row">
+                            <a href="#/students/" + this.model.get('last')>
+                            <td class="thumb">
+                                <img   class='thumbnail' src="<%= item.get('photo')%>">
+                                </td>
+                            </a>
+                            
+                            <td class="first"> <%= item.get('first') +" " + item.get('last') %> 
+                            </td >
+                            
+                            <td class="email"> <%= item.get('email')%> </td>
+                        </tr>
+                    </table>
                 </script>
 
                 <script type="text/template" id="student-template">
                     <div class="info-box">
-                        <img src=" <%= item.get('photo')%> ">
-                        <a href="#/students/<%= item.get('last') %>/edit/"><button id="edit">EDIT</button></a>
+                        <img src=" <%= item.get('photo')%>">
                         <br>
                         <h2><%= item.get('first') +" " + item.get('last') %> </span></h2>
                         <span><a href="mailto: <%= item.get('email')%>"> <%= item.get('email')%> </a> </span><br>
-                        <span><a href="<%= item.get('github')%>"> <%= item.get('github')%> </a></span>
+                        <span><a href="<%= item.get('github')%>"> <%= item.get('github')%> </a></span><br>
+                        <a href="#/students/<%= item.get('id')%>/edit/"><button id="edit">EDIT</button></a>
                     <div>
+
                 </script>
 
 
                 <script type="text/template" id="edit-template"> 
-                    <h2> Update Student Information </h2> 
-                        <div>First Name: <input id="first-input" placeholder="first name" value="<%=item.get('first')%>">
-                        </div>
-                        <div>Last Name: <input id="last-input" value="<%=item.get('last')%>"></div>
-                        <div>Email: <input id="email-input" value="<%=item.get('email')%>"></div>
-                        <div>Github: <input id="github-input" value="<%=item.get('github')%>"></div>
-                        <button id="save">Save</button>
+                    <h2> New Student </h2> 
+                    <div>First Name: <input id="first-input" placeholder="first name" value="<%=item.get('first')%>">
+                    </div>
+                    <div>Last Name: <input id="last-input" value="<%=item.get('last')%>"></div>
+                    <div>Email: <input id="email-input" value="<%=item.get('email')%>"></div>
+                    <div>Github: <input id="github-input" value="<%=item.get('github')%>"></div>
+                    <button id="save">Save</button>
                 </script>
         </div>    
 
