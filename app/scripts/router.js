@@ -33,7 +33,8 @@ DirectoryRouter = Backbone.Router.extend({
 	showEdit: function(id) {
 		console.log('editing student id:', id)
 		$('.container').html('')
-		new Editview({model: student})
+		var shownStudent = this.students.get(id)
+		new EditView({model: shownStudent})
 	}	
 })
 

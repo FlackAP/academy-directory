@@ -7,6 +7,8 @@ Student = Backbone.Model.extend({
     photo: ''
      },
 
+    idAttribute: '_id',
+
      initialize: function() {
 		console.log('cool new model')
 

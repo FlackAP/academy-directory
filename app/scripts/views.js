@@ -12,7 +12,7 @@ TableView = Backbone.View.extend({
 	},
 
 	render: function(){
-		this.$el.attr('href', '#/students/' + this.model.get('id') ),
+		this.$el.attr('href', '#/students/' + this.model.get('_id') ),
 		this.$el.append( this.template({item: this.model }) )
 	}
 }),
