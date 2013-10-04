@@ -39,6 +39,10 @@ EditView = Backbone.View.extend({
 
 	className:'edit-unit',
 
+	events: {
+		"click #save": "save"
+	},
+
 	initialize: function(){
 		console.log('editing coooool'),
 		$('.container').append(this.$el),
@@ -49,6 +53,18 @@ EditView = Backbone.View.extend({
 		console.log('ok'),
 		$('.student-unit').html(''),
 		this.$el.append( this.template({item: this.model}) )
-	}
+	},
 
+	save: function() {
+		console.log('oh wow'),
+
+		this.model.set({
+    	  "first": this.$el.find('#first-input').val(),
+    	  "last": this.$el.find('#last-input').val(),
+    	  "github": this.$el.find('#github-input').val(),
+    	  "email": this.$el.find('#email-input').val()
+    	}),
+
+		this.model.save()
+    }
 })

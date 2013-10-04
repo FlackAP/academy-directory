@@ -21,7 +21,9 @@
         <div class="header">
             <h1>The Iron Yard Academy Student Directory</h1>
             <h2>Fall 2013</h2>
-            <a href="#/table">Table View</a>
+            <div class="links">
+                <a class="show-all" href="#/table">Show All</a>
+            </div>
         </div>
 
 
@@ -50,20 +52,37 @@
                         <h2><%= item.get('first') +" " + item.get('last') %> </span></h2>
                         <span><a href="mailto: <%= item.get('email')%>"> <%= item.get('email')%> </a> </span><br>
                         <span><a href="<%= item.get('github')%>"> <%= item.get('github')%> </a></span><br>
-                        <a href="#/students/<%= item.get('_id')%>/edit"><button id="edit">EDIT</button></a>
+                        <a href="#/students/<%= item.get('_id')%>/edit"><button id="edit">Edit Info</button></a>
                     <div>
 
                 </script>
 
 
-                <script type="text/template" id="edit-template"> 
-                    <h2> New Student </h2> 
-                    <div>First Name: <input id="first-input" placeholder="first name" value="<%=item.get('first')%>">
-                    </div>
-                    <div>Last Name: <input id="last-input" value="<%=item.get('last')%>"></div>
-                    <div>Email: <input id="email-input" value="<%=item.get('email')%>"></div>
-                    <div>Github: <input id="github-input" value="<%=item.get('github')%>"></div>
-                    <button id="save">Save</button>
+                <script type="text/template" id="edit-template">
+                <table>
+                    <thead><h2> Edit Student Information </h2></thead> 
+                    <tr>
+                        <td class="category">First Name:</td>
+                        <td><input id="first-input" placeholder="first name" value="<%=item.get('first')%>"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="category">Last Name:</td>
+                        <td><input id="last-input" value="<%=item.get('last')%>"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="category">Email:</td>
+                        <td><input id="email-input" value="<%=item.get('email')%>"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="category">Github:</td> 
+                        <td><input id="github-input" value="<%=item.get('github')%>"></td>
+                    </tr>
+                    
+                </table>
+                <button id="save">Save</button>
                 </script>
         </div>    
 
