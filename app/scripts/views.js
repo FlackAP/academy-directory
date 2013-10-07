@@ -63,8 +63,18 @@ EditView = Backbone.View.extend({
     	  "last": this.$el.find('#last-input').val(),
     	  "github": this.$el.find('#github-input').val(),
     	  "email": this.$el.find('#email-input').val()
-    	}),
+    	})
 
-		this.model.save()
+		if (confirm("Are you sure you want to save?")) {
+			this.model.save(),
+			setTimeout(function() {
+				router.navigate('table', {trigger:true})
+			}, 1000)
+		}
+		else {	
+			console.log("you didn't save")
+		}
+
+
     }
 })
